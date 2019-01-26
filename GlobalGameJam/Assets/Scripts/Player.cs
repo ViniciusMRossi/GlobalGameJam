@@ -81,8 +81,10 @@ public class Player : MonoBehaviour
 
         if(!_pillow)
         {
-            if (!Physics.Raycast(transform.position, transform.forward, out var hit, 1, throwable)) return;
-            _pillow = hit.transform.GetComponent<Pillow>();
+            // ReSharper disable once Unity.PreferNonAllocApi
+            var results = Physics.OverlapSphere(transform.position, 1, throwable);
+            if (!(results?.Length > 0)) return;
+            _pillow = results[0].transform.GetComponent<Pillow>();
             _pillow.AttachToPlayer(handTransform);
         }
         else
@@ -113,5 +115,11 @@ public class Player : MonoBehaviour
 
     public void StartPlaying()
     {
+    }
+    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, 1);
     }
 }

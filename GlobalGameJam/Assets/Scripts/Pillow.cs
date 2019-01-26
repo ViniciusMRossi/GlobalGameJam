@@ -4,7 +4,7 @@
 public class Pillow : MonoBehaviour
 {
     private Rigidbody _rb;
-    private bool _isThrown;
+    private bool _isFlying;
 
     private void Start()
     {
@@ -13,6 +13,8 @@ public class Pillow : MonoBehaviour
 
     public void AttachToPlayer(Transform handTransform)
     {
+        DisableCollisionToPlayer(true);
+        _isFlying = false;
         _rb.constraints = RigidbodyConstraints.FreezeAll;
         _rb.velocity = Vector3.zero;
         transform.parent = handTransform;
@@ -21,8 +23,15 @@ public class Pillow : MonoBehaviour
 
     public void Throw(Vector3 direction)
     {
-        _rb.constraints = RigidbodyConstraints.FreezePositionY;
+        DisableCollisionToPlayer(false);
+        _isFlying = true;
+        _rb.constraints = RigidbodyConstraints.None;
         transform.parent = null;
         _rb.velocity = direction * 10;
+    }
+
+    private static void DisableCollisionToPlayer(bool disable)
+    {
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Pillow"), disable);
     }
 }
