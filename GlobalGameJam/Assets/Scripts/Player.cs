@@ -110,4 +110,8 @@ public class Player : MonoBehaviour
     public void OnHit(float impactValue)
     {
     }
+
+    public void StartPlaying()
+    {
+    }
 }
