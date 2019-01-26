@@ -10,13 +10,16 @@ public class GameController : MonoBehaviour
         Playing,
         ShowingWinner
     }
-    
+
     public GameObject startMenu;
     public GameObject endMenu;
+    public GameObject inGameMenu;
     public TextMeshProUGUI player1Score;
     public TextMeshProUGUI player2Score;
+    public TextMeshProUGUI player1ScoreFinal;
+    public TextMeshProUGUI player2ScoreFinal;
+    public TextMeshProUGUI messageFinal;
     public TextMeshProUGUI time;
-    public AudioSource audioSource;
     public int matchTimeSeconds = 60;
     public Player[] players;
     public int pointsPerHit = 1;
@@ -26,7 +29,7 @@ public class GameController : MonoBehaviour
     private int _player1Score;
     private int _player2Score;
     private bool _paused;
-    
+
     private void Update()
     {
         HandleStartPressed();
@@ -36,29 +39,53 @@ public class GameController : MonoBehaviour
     private void HandleTimePassing()
     {
         if (_gameState != GameState.Playing) return;
-        
+
         _remainingTime -= Time.deltaTime;
         time.text = Mathf.CeilToInt(_remainingTime).ToString();
+
+        if (!(_remainingTime <= 0)) return;
+
+        FinishGame();
+    }
+
+    private void FinishGame()
+    {
+        _remainingTime = 0;
+        _gameState = GameState.ShowingWinner;
+        endMenu.SetActive(true);
+        inGameMenu.SetActive(false);
+        player1ScoreFinal.text = _player1Score.ToString();
+        player2ScoreFinal.text = _player2Score.ToString();
+        if (_player1Score > _player2Score)
+        {
+            messageFinal.text = "Player 1 wins!";
+        }
+        else if (_player2Score > _player1Score)
+        {
+            messageFinal.text = "Player 2 wins!";
+        }
+        else
+        {
+            messageFinal.text = "It's a draw!";
+        }
     }
 
     private void HandleStartPressed()
     {
-        if (Input.GetButton("Pause1") || Input.GetButton("Pause2"))
+        if (!Input.GetButton("Pause1") && !Input.GetButton("Pause2")) return;
+        switch (_gameState)
         {
-            switch (_gameState)
-            {
-                case GameState.PreStart:
-                    StartGame();
-                    break;
-                case GameState.Playing:
-                    SwitchPause();
-                    break;
-                case GameState.ShowingWinner:
-                    Application.Quit();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            case GameState.PreStart:
+                StartGame();
+                break;
+            case GameState.Playing:
+                SwitchPause();
+                break;
+            case GameState.ShowingWinner:
+                Application.Quit();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 
@@ -69,11 +96,14 @@ public class GameController : MonoBehaviour
         Time.timeScale = _paused ? 0 : 1;
     }
 
-    public void StartGame()
+    private void StartGame()
     {
+        startMenu.SetActive(false);
+        inGameMenu.SetActive(true);
+
         _gameState = GameState.Playing;
         _remainingTime = matchTimeSeconds;
-        
+
         foreach (var player in players)
         {
             player.StartPlaying();
