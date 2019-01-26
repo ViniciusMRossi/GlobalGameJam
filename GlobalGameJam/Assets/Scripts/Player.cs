@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor.Experimental.UIElements.GraphView;
 using UnityEngine;
 
 [RequireComponent(typeof(CapsuleCollider))]
@@ -31,21 +32,24 @@ public class Player : MonoBehaviour
 
     public float speed;
     public int playerNumber;
+    public LayerMask throwable;
+    public Transform handTransform;
 
-    private Dictionary<Commands, string> commandMap;
-    private Vector2 velocity;
-    private Rigidbody rb;
+    private Dictionary<Commands, string> _commandMap;
+    private Vector2 _velocity;
+    private Rigidbody _rb;
+    private Pillow _pillow;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
         switch (playerNumber)
         {
             case 1:
-                commandMap = Player1Map;
+                _commandMap = Player1Map;
                 break;
             case 2:
-                commandMap = Player2Map;
+                _commandMap = Player2Map;
                 break;
             default:
                 throw new ArgumentException("Bad player number");
@@ -61,8 +65,9 @@ public class Player : MonoBehaviour
     private void UpdatePlaying()
     {
         var inputDirection = GetInputDirection();
-        velocity = inputDirection * Time.deltaTime * speed;
-        rb.velocity = velocity;
+        LookForward(inputDirection);
+        _velocity = inputDirection * Time.deltaTime * speed;
+        _rb.velocity = _velocity;
     }
 
     private void UpdateActions()
@@ -72,16 +77,25 @@ public class Player : MonoBehaviour
 
     private void HandleActionPress()
     {
-        if (!Input.GetButtonDown(commandMap[Commands.Fire])) return;
+        if (!Input.GetButtonDown(_commandMap[Commands.Fire])) return;
 
-        //TODO PERFORM FIRE
+        if(!_pillow)
+        {
+            if (!Physics.Raycast(transform.position, transform.right, out var hit, 1, throwable)) return;
+            _pillow = hit.transform.GetComponent<Pillow>();
+            _pillow.AttachToPlayer(handTransform);
+        }
+        else
+        {
+            _pillow.Throw(transform.right);
+            _pillow = null;
+        }
     }
 
     private Vector3 GetInputDirection()
     {
-        var inputDirection = new Vector3(Input.GetAxis(commandMap[Commands.Horizontal]),
-            Input.GetAxis(commandMap[Commands.Vertical]));
-        Debug.Log(inputDirection);
+        var inputDirection = new Vector3(Input.GetAxis(_commandMap[Commands.Horizontal]),
+            Input.GetAxis(_commandMap[Commands.Vertical]));
         return inputDirection;
     }
 
@@ -89,7 +103,7 @@ public class Player : MonoBehaviour
     {
         if (inputDirection != Vector3.zero)
         {
-            transform.forward = inputDirection;
+            transform.right = inputDirection;
         }
     }
 
