@@ -4,6 +4,8 @@
 [Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
+.idea/
+JetBrains/
 
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
