@@ -25562,11 +25562,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8185016747614162003}
     m_Modifications:
-    - target: {fileID: 231292636579954437, guid: 7dba5ba7388f70549b1f8fe2e2a75198,
-        type: 3}
-      propertyPath: m_Name
-      value: PillowPink
-      objectReference: {fileID: 0}
     - target: {fileID: 6048732243294294494, guid: 7dba5ba7388f70549b1f8fe2e2a75198,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25622,6 +25617,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 61.995003
       objectReference: {fileID: 0}
+    - target: {fileID: 231292636579954437, guid: 7dba5ba7388f70549b1f8fe2e2a75198,
+        type: 3}
+      propertyPath: m_Name
+      value: PillowPink
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dba5ba7388f70549b1f8fe2e2a75198, type: 3}
 --- !u!4 &8493572107842166724 stripped
@@ -25637,11 +25637,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8185016747614162003}
     m_Modifications:
-    - target: {fileID: 231292636579954437, guid: 7dba5ba7388f70549b1f8fe2e2a75198,
-        type: 3}
-      propertyPath: m_Name
-      value: PillowPink Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 6048732243294294494, guid: 7dba5ba7388f70549b1f8fe2e2a75198,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25712,6 +25707,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0000002
       objectReference: {fileID: 0}
+    - target: {fileID: 231292636579954437, guid: 7dba5ba7388f70549b1f8fe2e2a75198,
+        type: 3}
+      propertyPath: m_Name
+      value: PillowPink Variant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dba5ba7388f70549b1f8fe2e2a75198, type: 3}
 --- !u!4 &1167863986383272958 stripped
@@ -25727,11 +25727,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8185016747614162003}
     m_Modifications:
-    - target: {fileID: 450206845169253210, guid: b52cda3289f876b459fa07d3b1774176,
-        type: 3}
-      propertyPath: m_Name
-      value: PillowBlack
-      objectReference: {fileID: 0}
     - target: {fileID: 6267790487604942209, guid: b52cda3289f876b459fa07d3b1774176,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25787,6 +25782,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45.243004
       objectReference: {fileID: 0}
+    - target: {fileID: 450206845169253210, guid: b52cda3289f876b459fa07d3b1774176,
+        type: 3}
+      propertyPath: m_Name
+      value: PillowBlack
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b52cda3289f876b459fa07d3b1774176, type: 3}
 --- !u!4 &1828009266413968815 stripped
@@ -25802,11 +25802,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8185016747614162003}
     m_Modifications:
-    - target: {fileID: 4488247431021109579, guid: 2a78112515e36f040919b0c1a09fdf75,
-        type: 3}
-      propertyPath: m_Name
-      value: PillowBrown
-      objectReference: {fileID: 0}
     - target: {fileID: 7966212166465507216, guid: 2a78112515e36f040919b0c1a09fdf75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25861,6 +25856,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488247431021109579, guid: 2a78112515e36f040919b0c1a09fdf75,
+        type: 3}
+      propertyPath: m_Name
+      value: PillowBrown
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a78112515e36f040919b0c1a09fdf75, type: 3}
