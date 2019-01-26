@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="869b9951-06ad-45b1-b13e-f2944e17af27" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Furniture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Furniture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ThrowableFurniture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ThrowableFurniture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,10 +21,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/ThrowableFurniture.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+            <state relative-caret-position="323">
+              <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
               <folding>
-                <marker date="1548508286987" expanded="true" signature="43:47" ph="{...}" />
+                <marker date="1548510860595" expanded="true" signature="63:633" ph="{...}" />
+                <marker date="1548510860595" expanded="true" signature="168:220" ph="{...}" />
+                <marker date="1548510860595" expanded="true" signature="258:460" ph="{...}" />
+                <marker date="1548510860595" expanded="true" signature="502:558" ph="{...}" />
+                <marker date="1548510860595" expanded="true" signature="610:631" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -118,12 +124,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548507545625</updated>
-      <workItem from="1548507558285" duration="728000" />
+      <workItem from="1548507558285" duration="2862000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="728000" />
+    <option name="totallyTimeSpent" value="2862000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -142,12 +148,12 @@
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="NuGet" />
       <window_info anchor="bottom" id="Logcat" />
       <window_info anchor="bottom" id="Unit Tests" />
@@ -188,23 +194,30 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Furniture.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="493">
+          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding>
-            <marker date="1548508269578" expanded="true" signature="58:445" ph="{...}" />
-            <marker date="1548508269578" expanded="true" signature="138:443" ph="{...}" />
-            <marker date="1548508269578" expanded="true" signature="253:321" ph="{...}" />
-            <marker date="1548508269578" expanded="true" signature="369:437" ph="{...}" />
+            <marker date="1548509649799" expanded="true" signature="58:827" ph="{...}" />
+            <marker date="1548509649799" expanded="true" signature="213:825" ph="{...}" />
+            <marker date="1548509649799" expanded="true" signature="342:410" ph="{...}" />
+            <marker date="1548509649799" expanded="true" signature="423:642" ph="{...}" />
+            <marker date="1548509649799" expanded="true" signature="470:632" ph="{...}" />
+            <marker date="1548509649799" expanded="true" signature="705:773" ph="{...}" />
+            <marker date="1548509649799" expanded="true" signature="786:819" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/ThrowableFurniture.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+        <state relative-caret-position="323">
+          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
           <folding>
-            <marker date="1548508286987" expanded="true" signature="43:47" ph="{...}" />
+            <marker date="1548510860595" expanded="true" signature="63:633" ph="{...}" />
+            <marker date="1548510860595" expanded="true" signature="168:220" ph="{...}" />
+            <marker date="1548510860595" expanded="true" signature="258:460" ph="{...}" />
+            <marker date="1548510860595" expanded="true" signature="502:558" ph="{...}" />
+            <marker date="1548510860595" expanded="true" signature="610:631" ph="{...}" />
           </folding>
         </state>
       </provider>
