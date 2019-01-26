@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     public Transform handTransform;
 
     private Dictionary<Commands, string> _commandMap;
-    private Vector2 _velocity;
+    private Vector3 _velocity;
     private Rigidbody _rb;
     private Pillow _pillow;
 
@@ -81,20 +81,20 @@ public class Player : MonoBehaviour
 
         if(!_pillow)
         {
-            if (!Physics.Raycast(transform.position, transform.right, out var hit, 1, throwable)) return;
+            if (!Physics.Raycast(transform.position, transform.forward, out var hit, 1, throwable)) return;
             _pillow = hit.transform.GetComponent<Pillow>();
             _pillow.AttachToPlayer(handTransform);
         }
         else
         {
-            _pillow.Throw(transform.right);
+            _pillow.Throw(transform.forward);
             _pillow = null;
         }
     }
 
     private Vector3 GetInputDirection()
     {
-        var inputDirection = new Vector3(Input.GetAxis(_commandMap[Commands.Horizontal]),
+        var inputDirection = new Vector3(Input.GetAxis(_commandMap[Commands.Horizontal]), 0,
             Input.GetAxis(_commandMap[Commands.Vertical]));
         return inputDirection;
     }
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
     {
         if (inputDirection != Vector3.zero)
         {
-            transform.right = inputDirection;
+            transform.forward = inputDirection;
         }
     }
 

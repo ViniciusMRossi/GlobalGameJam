@@ -21,7 +21,7 @@ public class Pillow : MonoBehaviour
 
     public void Throw(Vector3 direction)
     {
-        _rb.constraints = RigidbodyConstraints.None;
+        _rb.constraints = RigidbodyConstraints.FreezePositionY;
         transform.parent = null;
         _rb.velocity = direction * 10;
     }

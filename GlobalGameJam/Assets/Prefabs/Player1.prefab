@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3012520783677278340}
   - component: {fileID: 3012520783677278395}
   - component: {fileID: 3012520783677278394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,8 @@ MonoBehaviour:
   playerNumber: 1
   throwable:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
+  handTransform: {fileID: 7208594933899308910}
 --- !u!1 &8151359035495975100
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7208594933899308910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8151359035495975100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.599, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3012520783677278342}
