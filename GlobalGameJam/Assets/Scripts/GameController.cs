@@ -30,6 +30,12 @@ public class GameController : MonoBehaviour
     private int _player2Score;
     private bool _paused;
 
+    private void Start()
+    {
+        startMenu.SetActive(true);
+        inGameMenu.SetActive(false);
+    }
+
     private void Update()
     {
         HandleStartPressed();
@@ -108,6 +114,9 @@ public class GameController : MonoBehaviour
         {
             player.StartPlaying();
         }
+
+        player1Score.text = _player1Score.ToString();
+        player2Score.text = _player2Score.ToString();
 
         _paused = false;
     }
