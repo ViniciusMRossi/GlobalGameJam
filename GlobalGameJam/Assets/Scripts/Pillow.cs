@@ -34,4 +34,15 @@ public class Pillow : MonoBehaviour
     {
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Pillow"), disable);
     }
+    
+    private void OnCollisionEnter(Collision other)
+    {
+        Player player;
+        if ((player = other.gameObject.GetComponent<Player>()) == null || !_isFlying) return;
+        var gameController = FindObjectOfType<GameController>();
+        if(player.playerNumber == 1)
+            gameController.OnPlayer1GotHit();
+        else
+            gameController.OnPlayer2GotHit();
+    }
 }
