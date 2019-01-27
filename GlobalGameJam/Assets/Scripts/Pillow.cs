@@ -4,7 +4,7 @@
 public class Pillow : MonoBehaviour
 {
     private Rigidbody _rb;
-    private Player heldBy;
+    public Player heldBy;
     private bool _isFlying;
     private int thrownBy;
 
@@ -15,6 +15,7 @@ public class Pillow : MonoBehaviour
 
     public void AttachToPlayer(Transform handTransform, Player player)
     {
+        if (heldBy != null) return;
         DisableCollisionToPlayer(true);
         heldBy = player;
         _isFlying = false;
@@ -32,7 +33,7 @@ public class Pillow : MonoBehaviour
         heldBy = null;
         _isFlying = true;
         _rb.constraints = RigidbodyConstraints.None;
-        _rb.velocity = direction * 10;
+        _rb.velocity = (direction * 10) + Vector3.up * .2f;
     }
 
     private static void DisableCollisionToPlayer(bool disable)

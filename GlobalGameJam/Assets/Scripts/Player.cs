@@ -91,9 +91,15 @@ public class Player : MonoBehaviour
             // ReSharper disable once Unity.PreferNonAllocApi
             var results = Physics.OverlapSphere(transform.position, 1, throwable);
             if (!(results?.Length > 0)) return;
-            _pillow = results[0].transform.GetComponent<Pillow>();
-            _pillow.AttachToPlayer(handTransform, this);
-            animator.SetBool("RunGrab", true);
+            foreach (var result in results)
+            { 
+                var temPillow = result.transform.GetComponent<Pillow>();
+                if(temPillow.heldBy != null) continue;
+                _pillow = temPillow;
+                _pillow.AttachToPlayer(handTransform, this);
+                animator.SetBool("RunGrab", true);
+                return;
+            }
         }
         else
         {
