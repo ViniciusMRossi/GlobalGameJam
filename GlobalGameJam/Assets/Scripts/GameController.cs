@@ -104,8 +104,6 @@ public class GameController : MonoBehaviour
     private void SwitchPause()
     {
         _paused = !_paused;
-
-        Time.timeScale = _paused ? 0 : 1;
     }
 
     private void StartGame()

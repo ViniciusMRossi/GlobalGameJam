@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEditor.Experimental.UIElements.GraphView;
 using UnityEngine;
 
 [RequireComponent(typeof(CapsuleCollider))]
@@ -39,6 +38,7 @@ public class Player : MonoBehaviour
     private Vector3 _velocity;
     private Rigidbody _rb;
     private Pillow _pillow;
+    private bool _isPlaying;
 
     private void Awake()
     {
@@ -56,8 +56,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        if (!_isPlaying) return;
         UpdatePlaying();
         UpdateActions();
     }
@@ -79,7 +80,7 @@ public class Player : MonoBehaviour
     {
         if (!Input.GetButtonDown(_commandMap[Commands.Fire])) return;
 
-        if(!_pillow)
+        if (!_pillow)
         {
             // ReSharper disable once Unity.PreferNonAllocApi
             var results = Physics.OverlapSphere(transform.position, 1, throwable);
@@ -111,17 +112,19 @@ public class Player : MonoBehaviour
 
     public void OnHit(float impactValue)
     {
-        
     }
 
     public void StartInputs()
     {
+        _isPlaying = true;
     }
 
     public void StopInputs()
     {
+        _isPlaying = false;
+        _rb.velocity = Vector3.zero;
     }
-    
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
