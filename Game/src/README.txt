@@ -1,0 +1,1 @@
+Open the "GlobalGameJam" folder using Unity
