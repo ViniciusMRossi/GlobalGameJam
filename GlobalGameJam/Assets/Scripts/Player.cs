@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     public int playerNumber;
     public LayerMask throwable;
     public Transform handTransform;
+    public Animator animator;
 
     private Dictionary<Commands, string> _commandMap;
     private Vector3 _velocity;
@@ -66,9 +67,14 @@ public class Player : MonoBehaviour
     private void UpdatePlaying()
     {
         var inputDirection = GetInputDirection();
-        LookForward(inputDirection);
+        StartRunAnimation(inputDirection);
         _velocity = inputDirection * Time.deltaTime * speed;
         _rb.velocity = _velocity;
+    }
+
+    private void StartRunAnimation(Vector3 inputDirection)
+    {
+        animator.SetBool("Run", inputDirection != Vector3.zero && _pillow == null);
     }
 
     private void UpdateActions()
@@ -87,11 +93,13 @@ public class Player : MonoBehaviour
             if (!(results?.Length > 0)) return;
             _pillow = results[0].transform.GetComponent<Pillow>();
             _pillow.AttachToPlayer(handTransform);
+            animator.SetBool("RunGrab", true);
         }
         else
         {
-            _pillow.Throw(transform.forward);
+            _pillow.Throw(playerNumber == 1 ? transform.forward : transform.forward * -1);
             _pillow = null;
+            animator.SetBool("RunGrab", false);
         }
     }
 
