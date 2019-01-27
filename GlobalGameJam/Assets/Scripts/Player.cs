@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
             var results = Physics.OverlapSphere(transform.position, 1, throwable);
             if (!(results?.Length > 0)) return;
             _pillow = results[0].transform.GetComponent<Pillow>();
-            _pillow.AttachToPlayer(handTransform);
+            _pillow.AttachToPlayer(handTransform, this);
             animator.SetBool("RunGrab", true);
         }
         else
