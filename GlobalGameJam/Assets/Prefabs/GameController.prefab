@@ -1316,7 +1316,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Press Start Button to exit
+  m_text: Press Start Button to play again
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af673da66f2218a42aa9f65c46fbb196, type: 2}
   m_sharedMaterial: {fileID: 21752688869702818, guid: af673da66f2218a42aa9f65c46fbb196,

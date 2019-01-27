@@ -1,6 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -94,7 +95,7 @@ public class GameController : MonoBehaviour
                 SwitchPause();
                 break;
             case GameState.ShowingWinner:
-                Application.Quit();
+                SceneManager.LoadScene("Main");
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
