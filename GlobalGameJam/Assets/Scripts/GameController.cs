@@ -74,6 +74,12 @@ public class GameController : MonoBehaviour
         {
             messageFinal.text = "It's a draw!";
         }
+        
+        
+        foreach (var player in players)
+        {
+            player.StopInputs();
+        }
     }
 
     private void HandleStartPressed()
@@ -112,7 +118,7 @@ public class GameController : MonoBehaviour
 
         foreach (var player in players)
         {
-            player.StartPlaying();
+            player.StartInputs();
         }
 
         player1Score.text = _player1Score.ToString();

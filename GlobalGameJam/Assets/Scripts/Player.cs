@@ -114,7 +114,11 @@ public class Player : MonoBehaviour
         
     }
 
-    public void StartPlaying()
+    public void StartInputs()
+    {
+    }
+
+    public void StopInputs()
     {
     }
     
