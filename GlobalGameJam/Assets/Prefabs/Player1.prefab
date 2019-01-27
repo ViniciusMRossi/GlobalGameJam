@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbebb9d68f9287241bbff6fecb38ad7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 320
   playerNumber: 1
   throwable:
     serializedVersion: 2
