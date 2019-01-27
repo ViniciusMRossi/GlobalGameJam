@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 [RequireComponent(typeof(CapsuleCollider))]
 [RequireComponent(typeof(Rigidbody))]
@@ -34,12 +35,15 @@ public class Player : MonoBehaviour
     public LayerMask throwable;
     public Transform handTransform;
     public Animator animator;
+    public AudioClip[] throwClips;
+    public AudioClip hitClip;
 
     private Dictionary<Commands, string> _commandMap;
     private Vector3 _velocity;
     private Rigidbody _rb;
     private Pillow _pillow;
     private bool _isPlaying;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
@@ -55,6 +59,8 @@ public class Player : MonoBehaviour
             default:
                 throw new ArgumentException("Bad player number");
         }
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -106,6 +112,7 @@ public class Player : MonoBehaviour
             _pillow.Throw(playerNumber == 1 ? transform.forward : transform.forward * -1);
             _pillow = null;
             animator.SetBool("RunGrab", false);
+            _audioSource.PlayOneShot(throwClips[UnityEngine.Random.Range(0, throwClips.Length)]);
         }
     }
 
@@ -126,6 +133,7 @@ public class Player : MonoBehaviour
 
     public void OnHit(float impactValue)
     {
+        _audioSource.PlayOneShot(hitClip);
     }
 
     public void StartInputs()

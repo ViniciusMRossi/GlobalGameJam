@@ -45,6 +45,7 @@ public class Pillow : MonoBehaviour
     {
         var player = other.gameObject.GetComponent<Player>();
         if (player == null || !_isFlying || thrownBy == player.playerNumber) return;
+        player.OnHit(0);
         var gameController = FindObjectOfType<GameController>();
         if(player.playerNumber == 1)
             gameController.OnPlayer1GotHit();
